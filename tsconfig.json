@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		//指定声明文件路径，如果指定了则只有在这里列出的声明文件才会被加载
+		"typeRoots": ["node_modules/@type", "src/types"],
+		//指定模块解析路径
+		"baseUrl": "./",
+		//指定路径映射
+		"paths": {
+			"@": ["src/"]
+		},
+		//指定编译的目的JS版本
+		"target": "ESNext",
+		//
+		"useDefineForClassFields": true,
+		//使用的模块化规范，有commonjs、umd等
+		"module": "ESNext",
+		//用于选择模块解析策略，有'node'和'classic'两种类型
+		"moduleResolution": "Node",
+		//是否开启严格模式
+		"strict": true,
+		//指定 jsx 代码的生成: 'preserve', 'react-native', or 'react'
+		"jsx": "preserve",
+		//用来指定编译时是否生成.map文件
+		"sourceMap": true,
+		//
+		"resolveJsonModule": true,
+		//isolatedModules的值为true或false，指定是否将每个文件作为单独的模块，默认为true，它不可以和declaration同时设定
+		"isolatedModules": true,
+		//通过为导入内容创建命名空间，实现CommonJS和ES模块之间的互操作性
+		"esModuleInterop": true,
+		//指定要使用的lib，比如ES6等
+		"lib": ["ESNext", "DOM"],
+		//
+		"skipLibCheck": true,
+		//检测this是否隐式指定
+		"noImplicitThis": false
+	},
+	//要编译的文件
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"references": [{ "path": "./tsconfig.node.json" }]
+}
