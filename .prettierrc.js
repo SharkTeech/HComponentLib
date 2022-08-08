@@ -2,7 +2,7 @@ module.exports = {
     //强制单引号
     singleQuote: true,
     //强制分号
-    semi: true,
+    semi: false,
     //四空格缩进
     tabWidth: 4,
     //不使用tab而用空格缩进
@@ -14,9 +14,9 @@ module.exports = {
     //末尾使用逗号
     trailingComma: 'all',
     //大括号内的首尾需要空格 { foo: bar }
-	bracketSpacing: true,
-	//jsx 标签的反尖括号需要换行
-	bracketSameLine: false,
+    bracketSpacing: true,
+    //jsx 标签的反尖括号需要换行
+    bracketSameLine: false,
     //箭头函数单参数使用括号
     arrwoParens: 'always',
     //每个文件格式化的范围是文件的全部内容
@@ -31,5 +31,5 @@ module.exports = {
     //根据显示样式决定 html 要不要折行
     htmlWhitespaceSensitivity: 'css',
     //换行符使用 lf
-    endOfLine: 'auto'
-}
+    endOfLine: 'auto',
+};

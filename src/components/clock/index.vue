@@ -20,40 +20,45 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue'
 
-const hours = reactive<Array<number>>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+// const hours = reactive<Array<number>>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
-let hourDeg = 0;
+let hourDeg = 0
 
-let minuteDeg = 0;
+let minuteDeg = 0
 
-let secondDeg = 0;
+let secondDeg = 0
 
-let hourHandActive = ref(`transform: rotateZ(0deg);`);
+const nowDate = new Date()
+hourDeg = nowDate.getHours() * 30
+minuteDeg = nowDate.getMinutes() * 6
+secondDeg = nowDate.getSeconds() * 6
 
-let minuteHandActive = ref(`transform: rotateZ(0deg);`);
+let hourHandActive = ref(`transform: rotateZ(0deg);`)
 
-let secondHandActive = ref(`transform: rotateZ(0deg);`);
+let minuteHandActive = ref(`transform: rotateZ(0deg);`)
+
+let secondHandActive = ref(`transform: rotateZ(0deg);`)
 
 function active() {
-    secondDeg = (secondDeg + 6) % 360;
+    secondDeg = (secondDeg + 6) % 360
     if (secondDeg % 60 === 0) {
-        minuteDeg = (minuteDeg + 1) % 360;
-        if (minuteDeg % 12 === 0) hourDeg = (hourDeg + 1) % 360;
+        minuteDeg = (minuteDeg + 1) % 360
+        if (minuteDeg % 12 === 0) hourDeg = (hourDeg + 1) % 360
     }
-    hourHandActive.value = `transform: rotateZ(${hourDeg}deg);`;
-    minuteHandActive.value = `transform: rotateZ(${minuteDeg}deg);`;
-    secondHandActive.value = `transform: rotateZ(${secondDeg}deg);`;
+    hourHandActive.value = `transform: rotateZ(${hourDeg}deg);`
+    minuteHandActive.value = `transform: rotateZ(${minuteDeg}deg);`
+    secondHandActive.value = `transform: rotateZ(${secondDeg}deg);`
 }
 
 function startClock() {
-    setInterval(active, 1000);
+    setInterval(active, 1000)
 }
 
 onMounted(() => {
-    startClock();
-});
+    startClock()
+})
 </script>
 
 <style lang="scss" scoped>
