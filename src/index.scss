@@ -1,0 +1,20 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    --col-fg: #cdccdc;
+    --col-bg: #ffffff;
+    --max-contrast: #000000;
+    --theme-color: skyblue;
+    --gray-1: #edf2f6;
+    --gray-2: #dbe1e6;
+    transition: all 0.5s;
+}
+
+body[mode='dark'] {
+    --col-fg: #8998a5;
+    --col-bg: #373747;
+    --max-contrast: #ffffff;
+    --gray-1: #434358;
+    --gray-2: #505063;
+}

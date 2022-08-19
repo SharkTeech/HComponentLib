@@ -17,10 +17,10 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue';
-const props = defineProps(['dayDate', 'isSelected']);
+import { toRefs } from 'vue'
+const props = defineProps(['dayDate', 'isSelected'])
 
-const { dayDate, isSelected } = toRefs(props);
+const { dayDate, isSelected } = toRefs(props)
 </script>
 
 <style scoped lang="scss">
@@ -56,16 +56,16 @@ const { dayDate, isSelected } = toRefs(props);
             }
 
             &__isNowDay {
-                color: #409eff;
+                color: var(--theme-color);
             }
 
             &__isSelected__isNowDay {
-                background: #409eff;
+                background: var(--theme-color);
                 color: #f5f5f5 !important;
             }
 
             &:hover {
-                color: #409eff;
+                color: var(--theme-color);
             }
         }
     }

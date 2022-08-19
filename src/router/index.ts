@@ -1,10 +1,10 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
-import Loading from '@/components/transition/index.vue';
+import Loading from '@/components/transition/index.vue'
 
-import { h, render } from 'vue';
-const loding = h(Loading);
-render(loding, document.body);
+import { h, render } from 'vue'
+const loding = h(Loading)
+render(loding, document.body)
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -22,20 +22,30 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Clock',
         component: () => import('@/components/clock/index.vue'),
     },
-];
+    {
+        path: '/form',
+        name: 'Form',
+        component: () => import('@/components/form/index.vue'),
+    },
+    {
+        path: '/toDo',
+        name: 'ToDo',
+        component: () => import('@/components/toDo/index.vue'),
+    },
+]
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes,
-});
+})
 
 router.beforeEach((to, from, next) => {
-    loding.component?.exposed?.startLoading();
-    next();
-});
+    loding.component?.exposed?.startLoading()
+    next()
+})
 
 router.afterEach(() => {
     // loding.component?.exposed?.stopLoading()
-});
+})
 
-export default router;
+export default router
